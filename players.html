@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Football League Data</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0 auto; max-width: 1100px; padding: 16px; color: #1d2733; background: #f7f9fb; }
+    h1 { margin-bottom: 4px; } p.sub { margin-top: 0; color: #5b6775; }
+    h2 { margin-top: 32px; border-bottom: 2px solid #2e7d32; padding-bottom: 4px; }
+    table { border-collapse: collapse; width: 100%; background: #fff; margin-bottom: 8px; }
+    th, td { border: 1px solid #d5dde5; padding: 6px 10px; text-align: left; }
+    th { background: #e8f2e9; } tr:target { background: #fff8d6; }
+    a { color: #1b5e20; } .wrap { overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Football League Data</h1>
+  <p class="sub">Human-readable view of the individuals in <a href="https://rimoza.github.io/football/players.ttl">players.ttl</a>, described with the <a href="https://rimoza.github.io/football/football.ttl">football ontology</a>.</p>
+  <div class="wrap">
+    <h2>Leagues</h2>
+    <table>
+      <tr><th>League</th></tr>
+      <tr id="firstDivision"><td>First Division</td></tr>
+      <tr id="premierLeague"><td>Premier League</td></tr>
+    </table>
+    <h2>Countries</h2>
+    <table>
+      <tr><th>Country</th></tr>
+      <tr id="finland"><td>Finland</td></tr>
+      <tr id="sweden"><td>Sweden</td></tr>
+    </table>
+    <h2>Cities</h2>
+    <table>
+      <tr><th>City</th></tr>
+      <tr id="jyvaskyla"><td>Jyväskylä</td></tr>
+      <tr id="lahti"><td>Lahti</td></tr>
+      <tr id="tampere"><td>Tampere</td></tr>
+    </table>
+    <h2>Stadiums</h2>
+    <table>
+      <tr><th>Stadium</th><th>City</th><th>Capacity</th></tr>
+      <tr id="harjuStadium"><td>Harju Stadium</td><td><a href="#jyvaskyla">Jyväskylä</a></td><td>3000</td></tr>
+      <tr id="kisapuistoStadium"><td>Kisapuisto Stadium</td><td><a href="#lahti">Lahti</a></td><td>4400</td></tr>
+      <tr id="ratinaStadium"><td>Ratina Stadium</td><td><a href="#tampere">Tampere</a></td><td>16800</td></tr>
+    </table>
+    <h2>Clubs</h2>
+    <table>
+      <tr><th>Club</th><th>Founded</th><th>Home stadium</th><th>League</th></tr>
+      <tr id="jyvaskylaFC"><td>Jyväskylä FC</td><td>1992</td><td><a href="#harjuStadium">Harju Stadium</a></td><td><a href="#premierLeague">Premier League</a></td></tr>
+      <tr id="lahtiRovers"><td>Lahti Rovers</td><td>1996</td><td><a href="#kisapuistoStadium">Kisapuisto Stadium</a></td><td><a href="#firstDivision">First Division</a></td></tr>
+      <tr id="tampereUnited"><td>Tampere United</td><td>1998</td><td><a href="#ratinaStadium">Ratina Stadium</a></td><td><a href="#premierLeague">Premier League</a></td></tr>
+    </table>
+    <h2>Players</h2>
+    <table>
+      <tr><th>Name</th><th>Position</th><th>No.</th><th>Born</th><th>Nationality</th><th>Foot</th><th>Goals</th><th>Club</th><th>Captain of</th></tr>
+      <tr id="mikaLaine"><td>Mika Laine</td><td>Goalkeeper</td><td>1</td><td>1990</td><td><a href="#finland">Finland</a></td><td>rightFoot</td><td>0</td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td></tr>
+      <tr id="eeroNieminen"><td>Eero Nieminen</td><td>Midfielder</td><td>8</td><td>1998</td><td><a href="#finland">Finland</a></td><td>leftFoot</td><td>9</td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td><td>–</td></tr>
+      <tr id="larsBerg"><td>Lars Berg</td><td>Forward</td><td>9</td><td>1995</td><td><a href="#sweden">Sweden</a></td><td>rightFoot</td><td>24</td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td><td>–</td></tr>
+      <tr id="villeAho"><td>Ville Aho</td><td>Defender</td><td>5</td><td>2000</td><td><a href="#finland">Finland</a></td><td>leftFoot</td><td>2</td><td><a href="#lahtiRovers">Lahti Rovers</a></td><td><a href="#lahtiRovers">Lahti Rovers</a></td></tr>
+      <tr id="erikSund"><td>Erik Sund</td><td>Midfielder</td><td>7</td><td>1999</td><td><a href="#sweden">Sweden</a></td><td>rightFoot</td><td>6</td><td><a href="#lahtiRovers">Lahti Rovers</a></td><td>–</td></tr>
+      <tr id="samiRanta"><td>Sami Ranta</td><td>Forward</td><td>11</td><td>2001</td><td><a href="#finland">Finland</a></td><td>rightFoot</td><td>14</td><td><a href="#lahtiRovers">Lahti Rovers</a></td><td>–</td></tr>
+      <tr id="anttiKoski"><td>Antti Koski</td><td>Goalkeeper</td><td>1</td><td>1993</td><td><a href="#finland">Finland</a></td><td>rightFoot</td><td>0</td><td><a href="#tampereUnited">Tampere United</a></td><td>–</td></tr>
+      <tr id="oskarLind"><td>Oskar Lind</td><td>Defender</td><td>4</td><td>1988</td><td><a href="#sweden">Sweden</a></td><td>rightFoot</td><td>3</td><td><a href="#tampereUnited">Tampere United</a></td><td><a href="#tampereUnited">Tampere United</a></td></tr>
+      <tr id="jariHolm"><td>Jari Holm</td><td>Forward</td><td>10</td><td>1997</td><td><a href="#finland">Finland</a></td><td>bothFeet</td><td>21</td><td><a href="#tampereUnited">Tampere United</a></td><td>–</td></tr>
+    </table>
+    <h2>Coaches and referees</h2>
+    <table>
+      <tr><th>Name</th><th>Role</th><th>Born</th><th>Nationality</th><th>Coaches</th></tr>
+      <tr id="kariVirta"><td>Kari Virta</td><td>Coach</td><td>1975</td><td><a href="#finland">Finland</a></td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td></tr>
+      <tr id="magnusEk"><td>Magnus Ek</td><td>Coach</td><td>1970</td><td><a href="#sweden">Sweden</a></td><td><a href="#tampereUnited">Tampere United</a></td></tr>
+      <tr id="pekkaSalo"><td>Pekka Salo</td><td>Coach</td><td>1980</td><td><a href="#finland">Finland</a></td><td><a href="#lahtiRovers">Lahti Rovers</a></td></tr>
+      <tr id="tuomasKivi"><td>Tuomas Kivi</td><td>Referee</td><td>1985</td><td><a href="#finland">Finland</a></td><td>–</td></tr>
+    </table>
+    <h2>Matches</h2>
+    <table>
+      <tr><th>Match</th><th>Date</th><th>Home team</th><th>Away team</th><th>Home goals</th><th>Away goals</th><th>Stadium</th></tr>
+      <tr id="match1"><td>Jyväskylä FC vs Tampere United</td><td>12.09.2026 18:00</td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td><td><a href="#tampereUnited">Tampere United</a></td><td>2</td><td>1</td><td><a href="#harjuStadium">Harju Stadium</a></td></tr>
+      <tr id="match2"><td>Lahti vs Jyväskylä FC</td><td>03.10.2026 18:00</td><td><a href="#lahtiRovers">Lahti Rovers</a></td><td><a href="#jyvaskylaFC">Jyväskylä FC</a></td><td>0</td><td>3</td><td><a href="#kisapuistoStadium">Kisapuisto Stadium</a></td></tr>
+    </table>
+  </div>
+</body>
+</html>

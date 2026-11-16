@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" version="XHTML+RDFa 1.1" xml:lang="en"
+      xmlns:fb="https://rimoza.github.io/football/football.ttl#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      prefix="fb: https://rimoza.github.io/football/football.ttl# rdfs: http://www.w3.org/2000/01/rdf-schema# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Football League Data (RDFa)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0 auto; max-width: 1100px; padding: 16px; color: #1d2733; background: #f7f9fb; }
+    h1 { margin-bottom: 4px; } p.sub { margin-top: 0; color: #5b6775; }
+    h2 { margin-top: 32px; border-bottom: 2px solid #2e7d32; padding-bottom: 4px; }
+    table { border-collapse: collapse; width: 100%; background: #fff; margin-bottom: 8px; }
+    th, td { border: 1px solid #d5dde5; padding: 6px 10px; text-align: left; }
+    th { background: #e8f2e9; } tr:target { background: #fff8d6; }
+    a { color: #1b5e20; } .wrap { overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Football League Data (RDFa)</h1>
+  <p class="sub">Human-readable view of the individuals in <a href="https://rimoza.github.io/football/players.ttl">players.ttl</a>, described with the <a href="https://rimoza.github.io/football/football.ttl">football ontology</a>. This version embeds the same data as RDFa.</p>
+  <div class="wrap">
+    <h2>Leagues</h2>
+    <table>
+      <tr><th>League</th></tr>
+      <tr id="firstDivision" about="https://rimoza.github.io/football/players.ttl#firstDivision" typeof="fb:League"><td><span property="rdfs:label">First Division</span></td></tr>
+      <tr id="premierLeague" about="https://rimoza.github.io/football/players.ttl#premierLeague" typeof="fb:League"><td><span property="rdfs:label">Premier League</span></td></tr>
+    </table>
+    <h2>Countries</h2>
+    <table>
+      <tr><th>Country</th></tr>
+      <tr id="finland" about="https://rimoza.github.io/football/players.ttl#finland" typeof="fb:Country"><td><span property="rdfs:label">Finland</span></td></tr>
+      <tr id="sweden" about="https://rimoza.github.io/football/players.ttl#sweden" typeof="fb:Country"><td><span property="rdfs:label">Sweden</span></td></tr>
+    </table>
+    <h2>Cities</h2>
+    <table>
+      <tr><th>City</th></tr>
+      <tr id="jyvaskyla" about="https://rimoza.github.io/football/players.ttl#jyvaskyla" typeof="fb:City"><td><span property="rdfs:label">Jyväskylä</span></td></tr>
+      <tr id="lahti" about="https://rimoza.github.io/football/players.ttl#lahti" typeof="fb:City"><td><span property="rdfs:label">Lahti</span></td></tr>
+      <tr id="tampere" about="https://rimoza.github.io/football/players.ttl#tampere" typeof="fb:City"><td><span property="rdfs:label">Tampere</span></td></tr>
+    </table>
+    <h2>Stadiums</h2>
+    <table>
+      <tr><th>Stadium</th><th>City</th><th>Capacity</th></tr>
+      <tr id="harjuStadium" about="https://rimoza.github.io/football/players.ttl#harjuStadium" typeof="fb:Stadium"><td><span property="rdfs:label">Harju Stadium</span></td><td><a rel="fb:locatedIn" href="https://rimoza.github.io/football/players.ttl#jyvaskyla">Jyväskylä</a></td><td><span property="fb:capacity" datatype="xsd:int">3000</span></td></tr>
+      <tr id="kisapuistoStadium" about="https://rimoza.github.io/football/players.ttl#kisapuistoStadium" typeof="fb:Stadium"><td><span property="rdfs:label">Kisapuisto Stadium</span></td><td><a rel="fb:locatedIn" href="https://rimoza.github.io/football/players.ttl#lahti">Lahti</a></td><td><span property="fb:capacity" datatype="xsd:int">4400</span></td></tr>
+      <tr id="ratinaStadium" about="https://rimoza.github.io/football/players.ttl#ratinaStadium" typeof="fb:Stadium"><td><span property="rdfs:label">Ratina Stadium</span></td><td><a rel="fb:locatedIn" href="https://rimoza.github.io/football/players.ttl#tampere">Tampere</a></td><td><span property="fb:capacity" datatype="xsd:int">16800</span></td></tr>
+    </table>
+    <h2>Clubs</h2>
+    <table>
+      <tr><th>Club</th><th>Founded</th><th>Home stadium</th><th>League</th></tr>
+      <tr id="jyvaskylaFC" about="https://rimoza.github.io/football/players.ttl#jyvaskylaFC" typeof="fb:Club"><td><span property="fb:clubName">Jyväskylä FC</span></td><td><span property="fb:foundedYear" datatype="xsd:int">1992</span></td><td><a rel="fb:hasHomeStadium" href="https://rimoza.github.io/football/players.ttl#harjuStadium">Harju Stadium</a></td><td><a rel="fb:belongsToLeague" href="https://rimoza.github.io/football/players.ttl#premierLeague">Premier League</a></td></tr>
+      <tr id="lahtiRovers" about="https://rimoza.github.io/football/players.ttl#lahtiRovers" typeof="fb:Club"><td><span property="fb:clubName">Lahti Rovers</span></td><td><span property="fb:foundedYear" datatype="xsd:int">1996</span></td><td><a rel="fb:hasHomeStadium" href="https://rimoza.github.io/football/players.ttl#kisapuistoStadium">Kisapuisto Stadium</a></td><td><a rel="fb:belongsToLeague" href="https://rimoza.github.io/football/players.ttl#firstDivision">First Division</a></td></tr>
+      <tr id="tampereUnited" about="https://rimoza.github.io/football/players.ttl#tampereUnited" typeof="fb:Club"><td><span property="fb:clubName">Tampere United</span></td><td><span property="fb:foundedYear" datatype="xsd:int">1998</span></td><td><a rel="fb:hasHomeStadium" href="https://rimoza.github.io/football/players.ttl#ratinaStadium">Ratina Stadium</a></td><td><a rel="fb:belongsToLeague" href="https://rimoza.github.io/football/players.ttl#premierLeague">Premier League</a></td></tr>
+    </table>
+    <h2>Players</h2>
+    <table>
+      <tr><th>Name</th><th>Position</th><th>No.</th><th>Born</th><th>Nationality</th><th>Foot</th><th>Goals</th><th>Club</th><th>Captain of</th></tr>
+      <tr id="mikaLaine" about="https://rimoza.github.io/football/players.ttl#mikaLaine" typeof="fb:Goalkeeper"><td><span property="fb:fullName">Mika Laine</span></td><td>Goalkeeper</td><td><span property="fb:shirtNumber" datatype="xsd:int">1</span></td><td><span property="fb:birthYear" datatype="xsd:int">1990</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">0</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td><td><a rel="fb:isCaptainOf" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td></tr>
+      <tr id="eeroNieminen" about="https://rimoza.github.io/football/players.ttl#eeroNieminen" typeof="fb:Midfielder"><td><span property="fb:fullName">Eero Nieminen</span></td><td>Midfielder</td><td><span property="fb:shirtNumber" datatype="xsd:int">8</span></td><td><span property="fb:birthYear" datatype="xsd:int">1998</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#leftFoot">leftFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">9</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td><td>–</td></tr>
+      <tr id="larsBerg" about="https://rimoza.github.io/football/players.ttl#larsBerg" typeof="fb:Forward"><td><span property="fb:fullName">Lars Berg</span></td><td>Forward</td><td><span property="fb:shirtNumber" datatype="xsd:int">9</span></td><td><span property="fb:birthYear" datatype="xsd:int">1995</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#sweden">Sweden</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">24</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td><td>–</td></tr>
+      <tr id="villeAho" about="https://rimoza.github.io/football/players.ttl#villeAho" typeof="fb:Defender"><td><span property="fb:fullName">Ville Aho</span></td><td>Defender</td><td><span property="fb:shirtNumber" datatype="xsd:int">5</span></td><td><span property="fb:birthYear" datatype="xsd:int">2000</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#leftFoot">leftFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">2</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td><td><a rel="fb:isCaptainOf" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td></tr>
+      <tr id="erikSund" about="https://rimoza.github.io/football/players.ttl#erikSund" typeof="fb:Midfielder"><td><span property="fb:fullName">Erik Sund</span></td><td>Midfielder</td><td><span property="fb:shirtNumber" datatype="xsd:int">7</span></td><td><span property="fb:birthYear" datatype="xsd:int">1999</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#sweden">Sweden</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">6</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td><td>–</td></tr>
+      <tr id="samiRanta" about="https://rimoza.github.io/football/players.ttl#samiRanta" typeof="fb:Forward"><td><span property="fb:fullName">Sami Ranta</span></td><td>Forward</td><td><span property="fb:shirtNumber" datatype="xsd:int">11</span></td><td><span property="fb:birthYear" datatype="xsd:int">2001</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">14</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td><td>–</td></tr>
+      <tr id="anttiKoski" about="https://rimoza.github.io/football/players.ttl#anttiKoski" typeof="fb:Goalkeeper"><td><span property="fb:fullName">Antti Koski</span></td><td>Goalkeeper</td><td><span property="fb:shirtNumber" datatype="xsd:int">1</span></td><td><span property="fb:birthYear" datatype="xsd:int">1993</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">0</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td><td>–</td></tr>
+      <tr id="oskarLind" about="https://rimoza.github.io/football/players.ttl#oskarLind" typeof="fb:Defender"><td><span property="fb:fullName">Oskar Lind</span></td><td>Defender</td><td><span property="fb:shirtNumber" datatype="xsd:int">4</span></td><td><span property="fb:birthYear" datatype="xsd:int">1988</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#sweden">Sweden</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#rightFoot">rightFoot</a></td><td><span property="fb:goalsScored" datatype="xsd:int">3</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td><td><a rel="fb:isCaptainOf" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td></tr>
+      <tr id="jariHolm" about="https://rimoza.github.io/football/players.ttl#jariHolm" typeof="fb:Forward"><td><span property="fb:fullName">Jari Holm</span></td><td>Forward</td><td><span property="fb:shirtNumber" datatype="xsd:int">10</span></td><td><span property="fb:birthYear" datatype="xsd:int">1997</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:hasPreferredFoot" href="https://rimoza.github.io/football/football.ttl#bothFeet">bothFeet</a></td><td><span property="fb:goalsScored" datatype="xsd:int">21</span></td><td><a rel="fb:playsFor" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td><td>–</td></tr>
+    </table>
+    <h2>Coaches and referees</h2>
+    <table>
+      <tr><th>Name</th><th>Role</th><th>Born</th><th>Nationality</th><th>Coaches</th></tr>
+      <tr id="kariVirta" about="https://rimoza.github.io/football/players.ttl#kariVirta" typeof="fb:Coach"><td><span property="fb:fullName">Kari Virta</span></td><td>Coach</td><td><span property="fb:birthYear" datatype="xsd:int">1975</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:coaches" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td></tr>
+      <tr id="magnusEk" about="https://rimoza.github.io/football/players.ttl#magnusEk" typeof="fb:Coach"><td><span property="fb:fullName">Magnus Ek</span></td><td>Coach</td><td><span property="fb:birthYear" datatype="xsd:int">1970</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#sweden">Sweden</a></td><td><a rel="fb:coaches" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td></tr>
+      <tr id="pekkaSalo" about="https://rimoza.github.io/football/players.ttl#pekkaSalo" typeof="fb:Coach"><td><span property="fb:fullName">Pekka Salo</span></td><td>Coach</td><td><span property="fb:birthYear" datatype="xsd:int">1980</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td><a rel="fb:coaches" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td></tr>
+      <tr id="tuomasKivi" about="https://rimoza.github.io/football/players.ttl#tuomasKivi" typeof="fb:Referee"><td><span property="fb:fullName">Tuomas Kivi</span></td><td>Referee</td><td><span property="fb:birthYear" datatype="xsd:int">1985</span></td><td><a rel="fb:hasNationality" href="https://rimoza.github.io/football/players.ttl#finland">Finland</a></td><td>–</td></tr>
+    </table>
+    <h2>Matches</h2>
+    <table>
+      <tr><th>Match</th><th>Date</th><th>Home team</th><th>Away team</th><th>Home goals</th><th>Away goals</th><th>Stadium</th></tr>
+      <tr id="match1" about="https://rimoza.github.io/football/players.ttl#match1" typeof="fb:Match"><td><span property="rdfs:label">Jyväskylä FC vs Tampere United</span></td><td><span property="fb:matchDate" datatype="xsd:dateTime" content="2026-09-12T18:00:00">12.09.2026 18:00</span></td><td><a rel="fb:homeTeam" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td><td><a rel="fb:awayTeam" href="https://rimoza.github.io/football/players.ttl#tampereUnited">Tampere United</a></td><td><span property="fb:homeGoals" datatype="xsd:int">2</span></td><td><span property="fb:awayGoals" datatype="xsd:int">1</span></td><td><a rel="fb:playedAt" href="https://rimoza.github.io/football/players.ttl#harjuStadium">Harju Stadium</a></td></tr>
+      <tr id="match2" about="https://rimoza.github.io/football/players.ttl#match2" typeof="fb:Match"><td><span property="rdfs:label">Lahti vs Jyväskylä FC</span></td><td><span property="fb:matchDate" datatype="xsd:dateTime" content="2026-10-03T18:00:00">03.10.2026 18:00</span></td><td><a rel="fb:homeTeam" href="https://rimoza.github.io/football/players.ttl#lahtiRovers">Lahti Rovers</a></td><td><a rel="fb:awayTeam" href="https://rimoza.github.io/football/players.ttl#jyvaskylaFC">Jyväskylä FC</a></td><td><span property="fb:homeGoals" datatype="xsd:int">0</span></td><td><span property="fb:awayGoals" datatype="xsd:int">3</span></td><td><a rel="fb:playedAt" href="https://rimoza.github.io/football/players.ttl#kisapuistoStadium">Kisapuisto Stadium</a></td></tr>
+    </table>
+  </div>
+</body>
+</html>
