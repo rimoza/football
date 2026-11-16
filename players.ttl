@@ -1,0 +1,225 @@
+@prefix :     <https://rimoza.github.io/football/players.ttl#> .
+@prefix fb:   <https://rimoza.github.io/football/football.ttl#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Individuals file for TIES4520 Semi-Final (f3).
+# Concepts come from the ontology (prefix fb:), individuals live in this file (prefix :).
+<https://rimoza.github.io/football/players.ttl> rdf:type owl:Ontology ;
+    owl:imports <https://rimoza.github.io/football/football.ttl> .
+
+#################################################################
+#    Leagues
+#################################################################
+
+:premierLeague rdf:type owl:NamedIndividual , fb:League ;
+    rdfs:label "Premier League" .
+
+:firstDivision rdf:type owl:NamedIndividual , fb:League ;
+    rdfs:label "First Division" .
+
+
+#################################################################
+#    Countries and cities
+#################################################################
+
+:finland rdf:type owl:NamedIndividual , fb:Country ;
+    rdfs:label "Finland" .
+
+:sweden rdf:type owl:NamedIndividual , fb:Country ;
+    rdfs:label "Sweden" .
+
+:jyvaskyla rdf:type owl:NamedIndividual , fb:City ;
+    rdfs:label "Jyväskylä" .
+
+:tampere rdf:type owl:NamedIndividual , fb:City ;
+    rdfs:label "Tampere" .
+
+:lahti rdf:type owl:NamedIndividual , fb:City ;
+    rdfs:label "Lahti" .
+
+
+#################################################################
+#    Stadiums
+#################################################################
+
+:harjuStadium rdf:type owl:NamedIndividual , fb:Stadium ;
+    rdfs:label "Harju Stadium" ;
+    fb:locatedIn :jyvaskyla ;
+    fb:capacity "3000"^^xsd:int .
+
+:ratinaStadium rdf:type owl:NamedIndividual , fb:Stadium ;
+    rdfs:label "Ratina Stadium" ;
+    fb:locatedIn :tampere ;
+    fb:capacity "16800"^^xsd:int .
+
+:kisapuistoStadium rdf:type owl:NamedIndividual , fb:Stadium ;
+    rdfs:label "Kisapuisto Stadium" ;
+    fb:locatedIn :lahti ;
+    fb:capacity "4400"^^xsd:int .
+
+
+#################################################################
+#    Clubs
+#################################################################
+
+:jyvaskylaFC rdf:type owl:NamedIndividual , fb:Club ;
+    fb:clubName "Jyväskylä FC" ;
+    fb:foundedYear "1992"^^xsd:int ;
+    fb:hasHomeStadium :harjuStadium ;
+    fb:belongsToLeague :premierLeague .
+
+:tampereUnited rdf:type owl:NamedIndividual , fb:Club ;
+    fb:clubName "Tampere United" ;
+    fb:foundedYear "1998"^^xsd:int ;
+    fb:hasHomeStadium :ratinaStadium ;
+    fb:belongsToLeague :premierLeague .
+
+:lahtiRovers rdf:type owl:NamedIndividual , fb:Club ;
+    fb:clubName "Lahti Rovers" ;
+    fb:foundedYear "1996"^^xsd:int ;
+    fb:hasHomeStadium :kisapuistoStadium ;
+    fb:belongsToLeague :firstDivision .
+
+
+
+#################################################################
+#    Coaches and referee
+#################################################################
+
+:kariVirta rdf:type owl:NamedIndividual , fb:Coach ;
+    fb:fullName "Kari Virta" ;
+    fb:birthYear "1975"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:coaches :jyvaskylaFC .
+
+:magnusEk rdf:type owl:NamedIndividual , fb:Coach ;
+    fb:fullName "Magnus Ek" ;
+    fb:birthYear "1970"^^xsd:int ;
+    fb:hasNationality :sweden ;
+    fb:coaches :tampereUnited .
+
+:pekkaSalo rdf:type owl:NamedIndividual , fb:Coach ;
+    fb:fullName "Pekka Salo" ;
+    fb:birthYear "1980"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:coaches :lahtiRovers .
+
+:tuomasKivi rdf:type owl:NamedIndividual , fb:Referee ;
+    fb:fullName "Tuomas Kivi" ;
+    fb:birthYear "1985"^^xsd:int ;
+    fb:hasNationality :finland .
+
+
+#################################################################
+#    Players
+#################################################################
+
+:mikaLaine rdf:type owl:NamedIndividual , fb:Goalkeeper ;
+    fb:fullName "Mika Laine" ;
+    fb:birthYear "1990"^^xsd:int ;
+    fb:shirtNumber "1"^^xsd:int ;
+    fb:goalsScored "0"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :jyvaskylaFC ;
+    fb:isCaptainOf :jyvaskylaFC .
+
+:eeroNieminen rdf:type owl:NamedIndividual , fb:Midfielder ;
+    fb:fullName "Eero Nieminen" ;
+    fb:birthYear "1998"^^xsd:int ;
+    fb:shirtNumber "8"^^xsd:int ;
+    fb:goalsScored "9"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:leftFoot ;
+    fb:playsFor :jyvaskylaFC .
+
+:larsBerg rdf:type owl:NamedIndividual , fb:Forward ;
+    fb:fullName "Lars Berg" ;
+    fb:birthYear "1995"^^xsd:int ;
+    fb:shirtNumber "9"^^xsd:int ;
+    fb:goalsScored "24"^^xsd:int ;
+    fb:hasNationality :sweden ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :jyvaskylaFC .
+
+:anttiKoski rdf:type owl:NamedIndividual , fb:Goalkeeper ;
+    fb:fullName "Antti Koski" ;
+    fb:birthYear "1993"^^xsd:int ;
+    fb:shirtNumber "1"^^xsd:int ;
+    fb:goalsScored "0"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :tampereUnited .
+
+:oskarLind rdf:type owl:NamedIndividual , fb:Defender ;
+    fb:fullName "Oskar Lind" ;
+    fb:birthYear "1988"^^xsd:int ;
+    fb:shirtNumber "4"^^xsd:int ;
+    fb:goalsScored "3"^^xsd:int ;
+    fb:hasNationality :sweden ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :tampereUnited ;
+    fb:isCaptainOf :tampereUnited .
+
+:jariHolm rdf:type owl:NamedIndividual , fb:Forward ;
+    fb:fullName "Jari Holm" ;
+    fb:birthYear "1997"^^xsd:int ;
+    fb:shirtNumber "10"^^xsd:int ;
+    fb:goalsScored "21"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:bothFeet ;
+    fb:playsFor :tampereUnited .
+
+:villeAho rdf:type owl:NamedIndividual , fb:Defender ;
+    fb:fullName "Ville Aho" ;
+    fb:birthYear "2000"^^xsd:int ;
+    fb:shirtNumber "5"^^xsd:int ;
+    fb:goalsScored "2"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:leftFoot ;
+    fb:playsFor :lahtiRovers ;
+    fb:isCaptainOf :lahtiRovers .
+
+:erikSund rdf:type owl:NamedIndividual , fb:Midfielder ;
+    fb:fullName "Erik Sund" ;
+    fb:birthYear "1999"^^xsd:int ;
+    fb:shirtNumber "7"^^xsd:int ;
+    fb:goalsScored "6"^^xsd:int ;
+    fb:hasNationality :sweden ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :lahtiRovers .
+
+:samiRanta rdf:type owl:NamedIndividual , fb:Forward ;
+    fb:fullName "Sami Ranta" ;
+    fb:birthYear "2001"^^xsd:int ;
+    fb:shirtNumber "11"^^xsd:int ;
+    fb:goalsScored "14"^^xsd:int ;
+    fb:hasNationality :finland ;
+    fb:hasPreferredFoot fb:rightFoot ;
+    fb:playsFor :lahtiRovers .
+
+
+#################################################################
+#    Matches
+#################################################################
+
+:match1 rdf:type owl:NamedIndividual , fb:Match ;
+    rdfs:label "Jyväskylä FC vs Tampere United" ;
+    fb:homeTeam :jyvaskylaFC ;
+    fb:awayTeam :tampereUnited ;
+    fb:playedAt :harjuStadium ;
+    fb:matchDate "2026-09-12T18:00:00"^^xsd:dateTime ;
+    fb:homeGoals "2"^^xsd:int ;
+    fb:awayGoals "1"^^xsd:int .
+
+:match2 rdf:type owl:NamedIndividual , fb:Match ;
+    rdfs:label "Lahti vs Jyväskylä FC" ;
+    fb:homeTeam :lahtiRovers ;
+    fb:awayTeam :jyvaskylaFC ;
+    fb:playedAt :kisapuistoStadium ;
+    fb:matchDate "2026-10-03T18:00:00"^^xsd:dateTime ;
+    fb:homeGoals "0"^^xsd:int ;
+    fb:awayGoals "3"^^xsd:int .
