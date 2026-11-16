@@ -1,0 +1,390 @@
+@prefix : <https://rimoza.github.io/football/football.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://rimoza.github.io/football/football.ttl#> .
+
+<https://rimoza.github.io/football/football.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://rimoza.github.io/football/football.ttl#awayTeam
+:awayTeam rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Match ;
+          rdfs:range :Club .
+
+
+###  https://rimoza.github.io/football/football.ttl#belongsToLeague
+:belongsToLeague rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Club ;
+                 rdfs:range :League .
+
+
+###  https://rimoza.github.io/football/football.ttl#coaches
+:coaches rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :Coach ;
+         rdfs:range :Club .
+
+
+###  https://rimoza.github.io/football/football.ttl#hasHomeStadium
+:hasHomeStadium rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Club ;
+                rdfs:range :Stadium .
+
+
+###  https://rimoza.github.io/football/football.ttl#hasNationality
+:hasNationality rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range :Country .
+
+
+###  https://rimoza.github.io/football/football.ttl#hasPlayer
+:hasPlayer rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :playsFor ;
+           rdfs:domain :Club ;
+           rdfs:range :Player .
+
+
+###  https://rimoza.github.io/football/football.ttl#hasPreferredFoot
+:hasPreferredFoot rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :Player ;
+                  rdfs:range :PreferredFoot .
+
+
+###  https://rimoza.github.io/football/football.ttl#homeTeam
+:homeTeam rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Match ;
+          rdfs:range :Club .
+
+
+###  https://rimoza.github.io/football/football.ttl#isCaptainOf
+:isCaptainOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:domain :Player ;
+             rdfs:range :Club .
+
+
+###  https://rimoza.github.io/football/football.ttl#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Stadium ;
+           rdfs:range :City .
+
+
+###  https://rimoza.github.io/football/football.ttl#playedAt
+:playedAt rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Match ;
+          rdfs:range :Stadium .
+
+
+###  https://rimoza.github.io/football/football.ttl#playsFor
+:playsFor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Player ;
+          rdfs:range :Club .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://rimoza.github.io/football/football.ttl#awayGoals
+:awayGoals rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#birthYear
+:birthYear rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#capacity
+:capacity rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Stadium ;
+          rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#clubName
+:clubName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Club ;
+          rdfs:range xsd:string .
+
+
+###  https://rimoza.github.io/football/football.ttl#foundedYear
+:foundedYear rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Club ;
+             rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#fullName
+:fullName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string .
+
+
+###  https://rimoza.github.io/football/football.ttl#goalsScored
+:goalsScored rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Player ;
+             rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#homeGoals
+:homeGoals rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:int .
+
+
+###  https://rimoza.github.io/football/football.ttl#matchDate
+:matchDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:dateTime .
+
+
+###  https://rimoza.github.io/football/football.ttl#shirtNumber
+:shirtNumber rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Player ;
+             rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://rimoza.github.io/football/football.ttl#CaptainPlayer
+:CaptainPlayer rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Player
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isCaptainOf ;
+                                                            owl:someValuesFrom :Club
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#City
+:City rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#Club
+:Club rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#ClubPlayer
+:ClubPlayer rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Player
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :playsFor ;
+                                                         owl:someValuesFrom :Club
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#Coach
+:Coach rdf:type owl:Class ;
+       rdfs:subClassOf :Person .
+
+
+###  https://rimoza.github.io/football/football.ttl#Country
+:Country rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#Defender
+:Defender rdf:type owl:Class ;
+          rdfs:subClassOf :Player .
+
+
+###  https://rimoza.github.io/football/football.ttl#Forward
+:Forward rdf:type owl:Class ;
+         rdfs:subClassOf :Player .
+
+
+###  https://rimoza.github.io/football/football.ttl#FullSquadClub
+:FullSquadClub rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Club
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasPlayer ;
+                                                            owl:minQualifiedCardinality "11"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :Player
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#Goalkeeper
+:Goalkeeper rdf:type owl:Class ;
+            rdfs:subClassOf :Player .
+
+
+###  https://rimoza.github.io/football/football.ttl#League
+:League rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#Match
+:Match rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#Midfielder
+:Midfielder rdf:type owl:Class ;
+            rdfs:subClassOf :Player .
+
+
+###  https://rimoza.github.io/football/football.ttl#NonPlayer
+:NonPlayer rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                      [ rdf:type owl:Class ;
+                                                        owl:complementOf :Player
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#Person
+:Person rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#Player
+:Player rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+###  https://rimoza.github.io/football/football.ttl#PreferredFoot
+:PreferredFoot rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( :bothFeet
+                                                 :leftFoot
+                                                 :rightFoot
+                                               )
+                                   ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#Referee
+:Referee rdf:type owl:Class ;
+         rdfs:subClassOf :Person .
+
+
+###  https://rimoza.github.io/football/football.ttl#Stadium
+:Stadium rdf:type owl:Class .
+
+
+###  https://rimoza.github.io/football/football.ttl#TeamMember
+:TeamMember rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Coach
+                                                :Player
+                                              )
+                                ] .
+
+
+###  https://rimoza.github.io/football/football.ttl#TopScorer
+:TopScorer rdf:type owl:Class ;
+           rdfs:subClassOf :Player .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://rimoza.github.io/football/football.ttl#bothFeet
+:bothFeet rdf:type owl:NamedIndividual ,
+                   :PreferredFoot .
+
+
+###  https://rimoza.github.io/football/football.ttl#leftFoot
+:leftFoot rdf:type owl:NamedIndividual ,
+                   :PreferredFoot .
+
+
+###  https://rimoza.github.io/football/football.ttl#rightFoot
+:rightFoot rdf:type owl:NamedIndividual ,
+                    :PreferredFoot .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :City
+                :Club
+                :Country
+                :League
+                :Match
+                :Person
+                :PreferredFoot
+                :Stadium
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Coach
+                :Player
+                :Referee
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Defender
+                :Forward
+                :Goalkeeper
+                :Midfielder
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :bothFeet
+                        :leftFoot
+                        :rightFoot
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
